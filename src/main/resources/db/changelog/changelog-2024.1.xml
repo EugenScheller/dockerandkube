@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet id="1" author="eugens">
+    <createTable tableName="user">
+      <column name="id" type="int" autoIncrement="true">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="username" type="varchar(50)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+      <!-- add more columns for user details -->
+    </createTable>
+  </changeSet>
+
+  <changeSet id="2" author="eugens">
+    <createTable tableName="book">
+      <column name="id" type="int" autoIncrement="true">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="title" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="author" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="genre" type="VARCHAR(100)"/>
+      <column name="description" type="TEXT"/>
+      <column name="isbn" type="VARCHAR(20)"/>
+      <column name="publish_date" type="DATE"/>
+      <column name="status" type="VARCHAR(50)"/>
+      <column name="rating" type="DECIMAL(2,1)">
+        <constraints checkConstraint="rating &gt;= 0 AND rating &lt;= 5"/>
+      </column>
+      <column name="image" type="BLOB"/>
+      <column name="created_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+      <column name="updated_at" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="3" author="eugens">
+    <createTable tableName="user_book">
+      <column name="user_id" type="int">
+        <constraints nullable="false"/>
+      </column>
+      <column name="book_id" type="int">
+        <constraints nullable="false"/>
+      </column>
+      <!-- you could add additional columns like `start_date`, `end_date`, `page_count` etc -->
+    </createTable>
+    <!-- setting up foreign key constraints -->
+    <addForeignKeyConstraint constraintName="fk_user_book_to_user"
+                             baseTableName="user_book"
+                             baseColumnNames="user_id"
+                             referencedTableName="user"
+                             referencedColumnNames="id"/>
+    <addForeignKeyConstraint constraintName="fk_user_book_to_book"
+                             baseTableName="user_book"
+                             baseColumnNames="book_id"
+                             referencedTableName="book"
+                             referencedColumnNames="id"/>
+  </changeSet>
+
+</databaseChangeLog>

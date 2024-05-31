@@ -1,0 +1,141 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="4" author="eugens">
+        <insert tableName="book">
+            <column name="title" value="To Kill a Mockingbird"/>
+            <column name="author" value="Harper Lee"/>
+            <column name="genre" value="Fiction"/>
+            <column name="description" value="A novel about the serious issues of rape and racial inequality."/>
+            <column name="isbn" value="9780061120084"/>
+            <column name="publish_date" value="1960-07-11"/>
+            <column name="status" value="read"/>
+            <column name="rating" valueNumeric="4.8"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="1984"/>
+            <column name="author" value="George Orwell"/>
+            <column name="genre" value="Dystopian"/>
+            <column name="description" value="A novel that explores the dangers of totalitarianism."/>
+            <column name="isbn" value="9780451524935"/>
+            <column name="publish_date" value="1949-06-08"/>
+            <column name="status" value="read"/>
+            <column name="rating" valueNumeric="4.7"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="The Great Gatsby"/>
+            <column name="author" value="F. Scott Fitzgerald"/>
+            <column name="genre" value="Fiction"/>
+            <column name="description" value="A novel about the American dream and the Roaring Twenties."/>
+            <column name="isbn" value="9780743273565"/>
+            <column name="publish_date" value="1925-04-10"/>
+            <column name="status" value="reading"/>
+            <column name="rating" valueNumeric="4.6"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="Moby-Dick"/>
+            <column name="author" value="Herman Melville"/>
+            <column name="genre" value="Adventure"/>
+            <column name="description" value="A novel about the voyage of the whaling ship Pequod."/>
+            <column name="isbn" value="9780142437247"/>
+            <column name="publish_date" value="1851-10-18"/>
+            <column name="status" value="to-read"/>
+            <column name="rating" valueNumeric="4.2"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="Pride and Prejudice"/>
+            <column name="author" value="Jane Austen"/>
+            <column name="genre" value="Romance"/>
+            <column name="description" value="A novel that charts the emotional development of the protagonist Elizabeth Bennet."/>
+            <column name="isbn" value="9781503290563"/>
+            <column name="publish_date" value="1813-01-28"/>
+            <column name="status" value="read"/>
+            <column name="rating" valueNumeric="4.9"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="War and Peace"/>
+            <column name="author" value="Leo Tolstoy"/>
+            <column name="genre" value="Historical"/>
+            <column name="description" value="A novel that details the French invasion of Russia."/>
+            <column name="isbn" value="9780199232765"/>
+            <column name="publish_date" value="1869-01-01"/>
+            <column name="status" value="to-read"/>
+            <column name="rating" valueNumeric="4.3"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="The Catcher in the Rye"/>
+            <column name="author" value="J.D. Salinger"/>
+            <column name="genre" value="Fiction"/>
+            <column name="description" value="A novel about teenage angst and alienation."/>
+            <column name="isbn" value="9780316769488"/>
+            <column name="publish_date" value="1951-07-16"/>
+            <column name="status" value="reading"/>
+            <column name="rating" valueNumeric="4.5"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="The Hobbit"/>
+            <column name="author" value="J.R.R. Tolkien"/>
+            <column name="genre" value="Fantasy"/>
+            <column name="description" value="A novel about the adventures of Bilbo Baggins."/>
+            <column name="isbn" value="9780547928227"/>
+            <column name="publish_date" value="1937-09-21"/>
+            <column name="status" value="read"/>
+            <column name="rating" valueNumeric="4.8"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="Crime and Punishment"/>
+            <column name="author" value="Fyodor Dostoevsky"/>
+            <column name="genre" value="Psychological"/>
+            <column name="description" value="A novel about the mental anguish and moral dilemmas of a poor ex-student."/>
+            <column name="isbn" value="9780486415871"/>
+            <column name="publish_date" value="1866-01-01"/>
+            <column name="status" value="to-read"/>
+            <column name="rating" valueNumeric="4.6"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="The Brothers Karamazov"/>
+            <column name="author" value="Fyodor Dostoevsky"/>
+            <column name="genre" value="Philosophical"/>
+            <column name="description" value="A novel about the spiritual drama of moral struggles concerning faith, doubt, and reason."/>
+            <column name="isbn" value="9780374528379"/>
+            <column name="publish_date" value="1880-01-01"/>
+            <column name="status" value="reading"/>
+            <column name="rating" valueNumeric="4.7"/>
+            <column name="image" value=""/>
+        </insert>
+
+        <insert tableName="book">
+            <column name="title" value="The Grapes of Wrath"/>
+            <column name="author" value="John Steinbeck"/>
+            <column name="genre" value="Fiction"/>
+            <column name="description" value="A novel about the hardships of an American farm family during the Great Depression."/>
+            <column name="isbn" value="9780143039433"/>
+            <column name="publish_date" value="1939-04-14"/>
+            <column name="status" value="read"/>
+            <column name="rating" valueNumeric="4.4"/>
+            <column name="image" value=""/>
+        </insert>
+    </changeSet>
+    
+</databaseChangeLog>
