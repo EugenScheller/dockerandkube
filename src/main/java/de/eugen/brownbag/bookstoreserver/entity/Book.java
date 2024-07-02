@@ -1,8 +1,10 @@
 package de.eugen.brownbag.bookstoreserver.entity;
 
+import de.eugen.brownbag.bookstoreserver.dto.BookRecordDTO;
 import jakarta.persistence.*;
 import org.springframework.core.io.ByteArrayResource;
 
+import javax.sql.rowset.serial.SerialBlob;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -17,7 +19,7 @@ public class Book {
     @Column(nullable = false, length = 100)
     private String title;
 
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false)
     private String author;
 
     @Column(length = 100)
@@ -46,7 +48,36 @@ public class Book {
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private LocalDateTime updatedAt;
 
-    public Long getId() {
+	public Book() {
+	}
+
+	public Book(BookRecordDTO book) throws SQLException {
+		this.setAuthor(book.author());
+		this.setGenre(book.genre());
+		this.setTitle(book.title());
+		this.setPublishDate(book.publish_date());
+		this.id = book.id();
+		this.setDescription(book.description());
+		this.setIsbn(book.isbn());
+		this.setRating(book.rating());
+        this.setStatus(book.status());
+        if (book.image() != null) {
+            this.setImage(new SerialBlob(book.image()));
+        }
+	}
+
+    @PrePersist
+    public void prePersist() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
+	public Long getId() {
         return id;
     }
 
@@ -115,6 +146,9 @@ public class Book {
     }
 
     public byte[] getImage() throws SQLException {
+        if (image == null) {
+            return null;
+        }
         int blobLength = (int) this.image.length();
         byte[] blobAsBytes = this.image.getBytes(1, blobLength);
 
@@ -130,15 +164,7 @@ public class Book {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

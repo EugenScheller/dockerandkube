@@ -7,6 +7,5 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
   
   <include file="changelog-2024.1.xml" relativeToChangelogFile="true"/>
-  <include file="update_timestamp_trigger.sql" relativeToChangelogFile="true"/>
   <include file="dummy_data.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
