@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookstoreserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookstoreserver
+  template:
+    metadata:
+      labels:
+        app: bookstoreserver
+    spec:
+      containers:
+        - name: bookstoreserver
+          image: bookstore:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://postgres:5432/mydatabase"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "myuser"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "mypassword"
+            - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+              value: "org.postgresql.Driver"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: "update"
+            - name: SPRING_JPA_SHOW_SQL
+              value: "true"
+            - name: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+              value: "org.hibernate.dialect.PostgreSQLDialect"

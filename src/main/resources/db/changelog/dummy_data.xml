@@ -14,7 +14,6 @@
             <column name="publish_date" value="1960-07-11"/>
             <column name="status" value="read"/>
             <column name="rating" valueNumeric="4.8"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -26,7 +25,6 @@
             <column name="publish_date" value="1949-06-08"/>
             <column name="status" value="read"/>
             <column name="rating" valueNumeric="4.7"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -38,7 +36,6 @@
             <column name="publish_date" value="1925-04-10"/>
             <column name="status" value="reading"/>
             <column name="rating" valueNumeric="4.6"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -50,7 +47,6 @@
             <column name="publish_date" value="1851-10-18"/>
             <column name="status" value="to-read"/>
             <column name="rating" valueNumeric="4.2"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -62,7 +58,6 @@
             <column name="publish_date" value="1813-01-28"/>
             <column name="status" value="read"/>
             <column name="rating" valueNumeric="4.9"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -74,7 +69,6 @@
             <column name="publish_date" value="1869-01-01"/>
             <column name="status" value="to-read"/>
             <column name="rating" valueNumeric="4.3"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -86,7 +80,6 @@
             <column name="publish_date" value="1951-07-16"/>
             <column name="status" value="reading"/>
             <column name="rating" valueNumeric="4.5"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -98,7 +91,6 @@
             <column name="publish_date" value="1937-09-21"/>
             <column name="status" value="read"/>
             <column name="rating" valueNumeric="4.8"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -110,7 +102,6 @@
             <column name="publish_date" value="1866-01-01"/>
             <column name="status" value="to-read"/>
             <column name="rating" valueNumeric="4.6"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -122,7 +113,6 @@
             <column name="publish_date" value="1880-01-01"/>
             <column name="status" value="reading"/>
             <column name="rating" valueNumeric="4.7"/>
-            <column name="image" value=""/>
         </insert>
 
         <insert tableName="book">
@@ -134,7 +124,6 @@
             <column name="publish_date" value="1939-04-14"/>
             <column name="status" value="read"/>
             <column name="rating" valueNumeric="4.4"/>
-            <column name="image" value=""/>
         </insert>
     </changeSet>
     
