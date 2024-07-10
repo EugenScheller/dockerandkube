@@ -1,7 +1,7 @@
 BookStoreServer
 Technologies Used
 Spring Boot: The backend is developed with Spring Boot, which makes it easy to create stand-alone, production-grade Spring based Applications.
-H2 Database: The H2 Database is used for persisting data. It's a fast in-memory database that supports regular disk-based tables as well.
+postgres: The postgres Database is used for persisting data. 
 Hibernate with Spring Data JPA: Hibernate and Spring Data JPA are used for persistence and transaction management.
 Liquibase: Liquibase is used for tracking, managing and applying database schema changes.
 How to Start the Service
